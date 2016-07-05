@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PaypalCalculatorController">
+            <connections>
+                <outlet property="counterTextField" destination="bck-2T-le1" id="7ui-A4-dkD"/>
+                <outlet property="parcelas" destination="4p3-Ml-rwx" id="4Bv-8j-AQz"/>
+                <outlet property="stepper" destination="JUl-4E-yqp" id="ckz-H4-VHx"/>
+                <outlet property="valor" destination="t3T-hX-Bc3" id="zNq-im-Oo4"/>
+                <outlet property="valorParcelaTF" destination="hiq-ni-qEw" id="hly-6K-6rB"/>
+                <outlet property="valorTaxasTF" destination="11Y-8F-tYL" id="LY1-Es-7XQ"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="Calculadora Paypal" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Calculadora Paypal" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About CPP" id="Rwp-CY-Uit">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="tPA-GH-PfE"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="P31-QY-FUg"/>
+                            <menuItem title="Hide CPP" keyEquivalent="h" id="yfT-aH-d1s">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="69p-t0-zJP"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="QlY-BB-fJd">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="xLb-IF-EKG"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="EGw-N2-Hka">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit CPP" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="E7o-3A-RTZ">
+                    <menu key="submenu" title="Edit" id="VDN-8K-skI">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="nmz-t6-Ba6">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="Fab-nR-Jtf"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="n99-kk-u0x">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="Nk8-Bg-Ul7"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="iyX-9f-u9A">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Cut" keyEquivalent="x" id="nFS-ie-rby">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="0W3-p6-mnV"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="oFA-L1-pRl">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="NWt-xF-bH9"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="z1Q-NO-amr">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="ICk-6J-gh0"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="KPs-FV-oQa">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="7rI-Gs-0dj"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="oCT-N3-2ji">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="yCp-lK-o4U"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Qqf-FA-g7C">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Find" id="4Ts-M2-NvH">
+                                <menu key="submenu" title="Find" id="Tmi-OX-5Y7">
+                                    <items>
+                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="N0J-3O-d57">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="FV4-Zs-0bX"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="hWJ-b7-QgV">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="YtN-TB-E8E"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="Wb5-5h-Ykq">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="Fmx-sQ-dnJ"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="be7-LM-2HN">
+                                            <connections>
+                                                <action selector="performFindPanelAction:" target="-1" id="rxh-4l-QmE"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="qpL-7h-g32">
+                                            <connections>
+                                                <action selector="centerSelectionInVisibleArea:" target="-1" id="yRn-6Z-1ze"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Spelling" id="2ta-HK-ajJ">
+                                <menu key="submenu" title="Spelling" id="jbv-QO-pdM">
+                                    <items>
+                                        <menuItem title="Spelling…" keyEquivalent=":" id="d2W-nj-WN8">
+                                            <connections>
+                                                <action selector="showGuessPanel:" target="-1" id="uiZ-mr-kcY"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Check Spelling" keyEquivalent=";" id="r2Q-9n-Cug">
+                                            <connections>
+                                                <action selector="checkSpelling:" target="-1" id="cr0-yh-e2u"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Check Spelling as You Type" id="FwP-Ux-mbG">
+                                            <connections>
+                                                <action selector="toggleContinuousSpellChecking:" target="-1" id="a4U-Nv-fhi"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="CPP - Calculadora de Parcelamento do Paypal" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="Hp7-xj-5Sa">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="390" height="142"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="XJ4-uL-TE4">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="142"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3T-hX-Bc3">
+                        <rect key="frame" x="86" y="100" width="96" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="IdL-wT-5QR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="calculate:" target="-2" id="c9V-hh-NWI"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4p3-Ml-rwx">
+                        <rect key="frame" x="86" y="67" width="39" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="h9b-Ig-nia">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="parcelasChanged:" target="-2" id="rZP-Jz-pe7"/>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aZ-0f-Vs1">
+                        <rect key="frame" x="18" y="102" width="39" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Valor:" id="gUz-2v-la5">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RrC-gB-gJk">
+                        <rect key="frame" x="18" y="69" width="60" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Parcelas:" id="es9-AI-Gmu">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUl-4E-yqp">
+                        <rect key="frame" x="125" y="64" width="19" height="27"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="yhj-6k-iCn"/>
+                        <connections>
+                            <action selector="calculate:" target="-2" id="0H0-H8-eIx"/>
+                        </connections>
+                    </stepper>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSn-Wz-xcF">
+                        <rect key="frame" x="218" y="102" width="72" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Valor Total:" id="NZT-Ky-AJt">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bck-2T-le1">
+                        <rect key="frame" x="294" y="102" width="78" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="R$100" id="QlV-N9-dy9">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiq-ni-qEw">
+                        <rect key="frame" x="294" y="79" width="78" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="----" id="WlD-UM-YMd">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gf0-YK-3dR">
+                        <rect key="frame" x="218" y="54" width="43" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Taxas:" id="KgF-OL-ck6">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11Y-8F-tYL">
+                        <rect key="frame" x="294" y="54" width="78" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="----" id="ksM-Vb-LrI">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UgU-kc-UY2">
+                        <rect key="frame" x="218" y="79" width="53" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Parcela:" id="7VA-Oj-GuI">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-v2-dly">
+                        <rect key="frame" x="215" y="13" width="140" height="32"/>
+                        <buttonCell key="cell" type="push" title="Copiar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J7z-tP-hEq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="copyValues:" target="-2" id="d7F-1w-EWq"/>
+                        </connections>
+                    </button>
+                    <box focusRingType="none" fixedFrame="YES" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="cOu-zb-tda">
+                        <rect key="frame" x="196" y="8" width="177" height="134"/>
+                        <view key="contentView" id="ydQ-VQ-VaK">
+                            <rect key="frame" x="1" y="1" width="175" height="118"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <color key="borderColor" red="0.69019609689999994" green="0.94901961089999998" blue="0.043137256059999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.82798648049645385" colorSpace="calibratedRGB"/>
+                    </box>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="852" y="415"/>
+        </window>
+    </objects>
+</document>
