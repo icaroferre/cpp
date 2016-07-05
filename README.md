@@ -2,6 +2,8 @@
 
 Calculadora de Parcelamento do Paypal
 
+![CPP-ScreenShot](/images/cpp-10-screenshot.png?raw=true)
+
 Desenvolvido por:  
 Ícaro Ferre  
 [spektroaudio.com](spektroaudio.com)
