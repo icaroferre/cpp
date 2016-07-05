@@ -17,5 +17,5 @@ setup(
     options={'py2app': OPTIONS},
     setup_requires=['py2app'],
     name="CPP",
-    version="0.1",
+    version="1.0.0",
 )
