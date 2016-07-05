@@ -10,7 +10,7 @@ Desenvolvido por:
 
 --------
 
-Download: Versão 0.1
+[Download: Versão 1.0](https://github.com/icaroferre/cpp/releases/download/v1.0/CPP.1.0.zip)
 
 ---------
 
